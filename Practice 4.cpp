@@ -1,9 +1,26 @@
 #include <iostream>
-#include <limits>
 using namespace std;
 
 int main() {
-   cout <<"Integer Min:" << numeric_limits<int>::min() << endl;
-   cout <<"Integer Max:" << numeric_limits<int>::max() << endl;
-   return 0;
+    int num[3];
+
+    cout << "Enter three numbers: ";
+    for (int i = 0; i < 3; i++) {
+        cin >> num[i]; 
+    }
+
+    int max = num[0];
+    int min = num[0]; 
+
+    for (int i = 1; i < 3; i++) {
+        if (num[i] > max)
+            max = num[i];
+        if (num[i] < min)
+            min = num[i];
+    }
+
+    cout << "Maximum number is: " << max << endl;
+    cout << "Minimum number is: " << min << endl;
+
+    return 0;
 }
